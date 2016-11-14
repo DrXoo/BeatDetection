@@ -23,7 +23,7 @@ public class SimpleBeatDetection : MonoBehaviour {
 	public int bufferSize;
 
 	// The type of window we are going to apply at the Spectrum
-	public FFTWindow window;
+	public FFTWindow FFTWindow;
 
 	void Start () {
 
@@ -75,8 +75,8 @@ public class SimpleBeatDetection : MonoBehaviour {
 		// Fill the samples arrays
 		// Each value of these arrays are floats between 0 and 1
 		// and are the frequency percentage of use
-		audioSource.GetSpectrumData (samples0Channel, 0, FFTWindow.Hamming);
-		audioSource.GetSpectrumData (samples1Channel, 1, FFTWindow.Hamming);
+		audioSource.GetSpectrumData (samples0Channel, 0, FFTWindow);
+		audioSource.GetSpectrumData (samples1Channel, 1, FFTWindow);
 
 		// Refer to reference: e = sum(a[i]^2 + b[i]^2)
 		for (int i = 0; i < bufferSize; i++) {
