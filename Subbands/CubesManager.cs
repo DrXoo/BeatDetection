@@ -13,8 +13,8 @@ public class CubesManager : MonoBehaviour {
 		int j = 0;
 		for (int i = 0; i < cubesToSpawn; i++) {
 			CubeSound newCube = Instantiate<CubeSound> (prefabObject);
-			int[] toEar = { j, j+1, j+2, j+3 };
-			j += 4;
+			int[] toEar = { j, j+1 };
+			j += 2;
 			newCube.selectedBeatDetection = selectedBeatDetection;
 			newCube.subbandsToEar = toEar;
 			newCube.smoothnessChange = 2f;

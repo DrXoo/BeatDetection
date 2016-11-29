@@ -61,7 +61,8 @@ public class SimpleBeatDetection : MonoBehaviour {
 		// Ask if a beat has been done
 		if (instantEnergy > constantC * localAverageEnergy) {
 			// Beat!
-			OnBeat();
+			if(OnBeat != null)
+				OnBeat();
 		}
 
 
